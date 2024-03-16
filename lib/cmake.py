@@ -57,7 +57,3 @@ class cmake:
     def file(self,new_var_name:"str",mode:"str"=glob_recurse,*search_str:"str")->"cmake":
         self.__write_stack.append(f"file({mode} {new_var_name} {args_to_str(search_str)})")
         return self
-    
-    def use_generator(self,name:"str"="Unix Makefiles")->"cmake":
-        self.__write_stack.append(f"set(CMAKE_GENERATOR \"{name}\" CACHE INTERNAL "" FORCE)")
-        return self
