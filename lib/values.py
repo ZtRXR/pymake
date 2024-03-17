@@ -1,4 +1,3 @@
-
 cmake_export_compile_cmmands = "CMAKE_EXPORT_COMPILE_COMMANDS"
 project_name="PROJECT_NAME"
 public = "PUBLIC"
@@ -14,4 +13,4 @@ o3 = "-O3"
 o2 = "-O2"
 cmake_cxx_flags_release = "CMAKE_CXX_FLAGS_RELEASE"
 cmake_cxx_flags_debug = "CMAKE_CXX_FLAGS_DEBUG"
-
+on="ON"
