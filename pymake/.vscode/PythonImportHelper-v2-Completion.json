@@ -1,0 +1,195 @@
+[
+    {
+        "label": "*",
+        "importPath": "lib.tools",
+        "description": "lib.tools",
+        "isExtraImport": true,
+        "detail": "lib.tools",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "lib.tools",
+        "description": "lib.tools",
+        "isExtraImport": true,
+        "detail": "lib.tools",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "isExtraImport": true,
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "isExtraImport": true,
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "lib.cmake",
+        "description": "lib.cmake",
+        "isExtraImport": true,
+        "detail": "lib.cmake",
+        "documentation": {}
+    },
+    {
+        "label": "cmake",
+        "kind": 6,
+        "importPath": "lib.cmake",
+        "description": "lib.cmake",
+        "peekOfCode": "class cmake:\n    __write_stack:\"list[str]\" = []\n    __file_name = \"\"\n    def __init__(self,version_min:\"str\",file_name:\"str\"=\"CMakeLists.txt\") -> None:\n        self.__file_name = file_name\n        self.__write_stack.append(f\"cmake_minimum_required(VERSION {version_min})\")\n    def write(self)->None:\n        with open(file=self.__file_name,mode=\"+w\",encoding=\"utf8\") as f:\n            for i in self.__write_stack:\n                f.write(i)",
+        "detail": "lib.cmake",
+        "documentation": {}
+    },
+    {
+        "label": "var",
+        "kind": 2,
+        "importPath": "lib.tools",
+        "description": "lib.tools",
+        "peekOfCode": "def var(name:\"str\")->\"str\":\n    return f\"${{{name}}}\"\ndef args_to_str(args:\"list[str]\")->str:\n    vars_str = \"\"\n    for i in args:\n         vars_str=f\"{vars_str} {i}\"\n    return vars_str",
+        "detail": "lib.tools",
+        "documentation": {}
+    },
+    {
+        "label": "args_to_str",
+        "kind": 2,
+        "importPath": "lib.tools",
+        "description": "lib.tools",
+        "peekOfCode": "def args_to_str(args:\"list[str]\")->str:\n    vars_str = \"\"\n    for i in args:\n         vars_str=f\"{vars_str} {i}\"\n    return vars_str",
+        "detail": "lib.tools",
+        "documentation": {}
+    },
+    {
+        "label": "cmake_export_compile_cmmands",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "cmake_export_compile_cmmands = \"CMAKE_EXPORT_COMPILE_COMMANDS\"\nproject_name=\"PROJECT_NAME\"\npublic = \"PUBLIC\"\nstatic = \"STATIC\"\nshared = \"SHARED\"\nmodule = \"MODULE\"\nprivate = \"PRIVATE\"\ninterface = \"INTERFACE\"\nglob_recurse = \"GLOB_RECURSE\"\ncmake_cxx_standard = \"CMAKE_CXX_STANDARD\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "public",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "public = \"PUBLIC\"\nstatic = \"STATIC\"\nshared = \"SHARED\"\nmodule = \"MODULE\"\nprivate = \"PRIVATE\"\ninterface = \"INTERFACE\"\nglob_recurse = \"GLOB_RECURSE\"\ncmake_cxx_standard = \"CMAKE_CXX_STANDARD\"\ncmake_cxx_flags = \"CMAKE_CXX_FLAGS\"\no3 = \"-O3\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "static = \"STATIC\"\nshared = \"SHARED\"\nmodule = \"MODULE\"\nprivate = \"PRIVATE\"\ninterface = \"INTERFACE\"\nglob_recurse = \"GLOB_RECURSE\"\ncmake_cxx_standard = \"CMAKE_CXX_STANDARD\"\ncmake_cxx_flags = \"CMAKE_CXX_FLAGS\"\no3 = \"-O3\"\no2 = \"-O2\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "shared",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "shared = \"SHARED\"\nmodule = \"MODULE\"\nprivate = \"PRIVATE\"\ninterface = \"INTERFACE\"\nglob_recurse = \"GLOB_RECURSE\"\ncmake_cxx_standard = \"CMAKE_CXX_STANDARD\"\ncmake_cxx_flags = \"CMAKE_CXX_FLAGS\"\no3 = \"-O3\"\no2 = \"-O2\"\ncmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "module",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "module = \"MODULE\"\nprivate = \"PRIVATE\"\ninterface = \"INTERFACE\"\nglob_recurse = \"GLOB_RECURSE\"\ncmake_cxx_standard = \"CMAKE_CXX_STANDARD\"\ncmake_cxx_flags = \"CMAKE_CXX_FLAGS\"\no3 = \"-O3\"\no2 = \"-O2\"\ncmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"\ncmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "private",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "private = \"PRIVATE\"\ninterface = \"INTERFACE\"\nglob_recurse = \"GLOB_RECURSE\"\ncmake_cxx_standard = \"CMAKE_CXX_STANDARD\"\ncmake_cxx_flags = \"CMAKE_CXX_FLAGS\"\no3 = \"-O3\"\no2 = \"-O2\"\ncmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"\ncmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"\non=\"ON\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "interface",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "interface = \"INTERFACE\"\nglob_recurse = \"GLOB_RECURSE\"\ncmake_cxx_standard = \"CMAKE_CXX_STANDARD\"\ncmake_cxx_flags = \"CMAKE_CXX_FLAGS\"\no3 = \"-O3\"\no2 = \"-O2\"\ncmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"\ncmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"\non=\"ON\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "glob_recurse",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "glob_recurse = \"GLOB_RECURSE\"\ncmake_cxx_standard = \"CMAKE_CXX_STANDARD\"\ncmake_cxx_flags = \"CMAKE_CXX_FLAGS\"\no3 = \"-O3\"\no2 = \"-O2\"\ncmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"\ncmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"\non=\"ON\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "cmake_cxx_standard",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "cmake_cxx_standard = \"CMAKE_CXX_STANDARD\"\ncmake_cxx_flags = \"CMAKE_CXX_FLAGS\"\no3 = \"-O3\"\no2 = \"-O2\"\ncmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"\ncmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"\non=\"ON\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "cmake_cxx_flags",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "cmake_cxx_flags = \"CMAKE_CXX_FLAGS\"\no3 = \"-O3\"\no2 = \"-O2\"\ncmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"\ncmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"\non=\"ON\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "o3",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "o3 = \"-O3\"\no2 = \"-O2\"\ncmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"\ncmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"\non=\"ON\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "o2",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "o2 = \"-O2\"\ncmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"\ncmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"\non=\"ON\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "cmake_cxx_flags_release",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "cmake_cxx_flags_release = \"CMAKE_CXX_FLAGS_RELEASE\"\ncmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"\non=\"ON\"",
+        "detail": "lib.values",
+        "documentation": {}
+    },
+    {
+        "label": "cmake_cxx_flags_debug",
+        "kind": 5,
+        "importPath": "lib.values",
+        "description": "lib.values",
+        "peekOfCode": "cmake_cxx_flags_debug = \"CMAKE_CXX_FLAGS_DEBUG\"\non=\"ON\"",
+        "detail": "lib.values",
+        "documentation": {}
+    }
+]
