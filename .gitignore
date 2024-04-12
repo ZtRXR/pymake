@@ -1,0 +1,7 @@
+# Ignore the 'dist' directory at the root of the project
+/dist/
+
+# Ignore all __pycache__ directories in the project
+__pycache__/
+
+/.vscode
