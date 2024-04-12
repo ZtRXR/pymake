@@ -4,8 +4,17 @@
 
 # 如何安装
 
-用.pth文件自行定位到本项目的文件夹中
-
+## 从release中安装
+```bash
+pip install <file name>
+```
+## 自行编译
+```bash
+pip install poetry
+poetry install
+poetry build
+pip install ./dist/pymake-0.1.0-py3-none-any.whl
+```
 # 如何使用
 >生成一个用于GLFW编程的CMakeLists
 ```python
