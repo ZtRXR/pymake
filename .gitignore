@@ -5,3 +5,9 @@
 __pycache__/
 
 /.vscode
+
+/CMakeLists.txt
+
+/main.cxx
+
+/build
