@@ -56,3 +56,7 @@ class cmake:
     def file(self,new_var_name:"str",mode:"str"=glob_recurse,*search_str:"str")->"cmake":
         self.__write_stack.append(f"file({mode} {new_var_name} {args_to_str(search_str)})")
         return self
+    
+    def add_subdirectory(self,path:str)->'cmake':
+        self.__write_stack.append(f"add_subdirectory({path}))")
+        return self
