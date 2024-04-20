@@ -58,5 +58,5 @@ class cmake:
         return self
     
     def add_subdirectory(self,path:str)->'cmake':
-        self.__write_stack.append(f"add_subdirectory({path}))")
+        self.__write_stack.append(f"add_subdirectory({path})")
         return self
