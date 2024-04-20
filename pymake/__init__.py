@@ -1,3 +1,3 @@
-from .lib.values import *
-from .lib.cmake import *
-from .lib.tools import *
+from .values import *
+from .cmake import *
+from .tools import *

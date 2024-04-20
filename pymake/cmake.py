@@ -1,6 +1,5 @@
 from .tools import *
 from .values import *
-
 class cmake:
     __write_stack:"list[str]" = []
     __file_name = ""
