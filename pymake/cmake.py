@@ -58,6 +58,6 @@ class cmake:
         self.__write_stack__.append(f"file({mode} {new_var_name} {args_to_str(search_str)})")
         return self
     
-    def add_subdirectory(self,path:str)->'cmake':
+    def add_subdirectory(self,path:str)->Self:
         self.__write_stack__.append(f"add_subdirectory({path})")
         return self
