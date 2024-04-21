@@ -27,18 +27,10 @@ class cmake:
         return self
     
     def add_library(self,name:str=var(project_name),mode:ModesSSM="STATIC",*source:str)->Self:
-        """
-        ARGS:
-            mode: mode can be STATIC , SHARED or MODULE
-        """
         self.__write_stack__.append(f"add_library({name} {mode} {args_to_str(source)})")
         return self
     
     def target_include_directories(self,for_project:str=var(project_name),mode:ModesPPI="PUBLIC",*directories:str)->Self:
-        """
-        ARGS:
-            mode : mode can be PUBLIC PRIVATE INTERFACE
-        """
         self.__write_stack__.append(f"target_include_directories({for_project} {mode} {args_to_str(directories)})")
         return self
 
