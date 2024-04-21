@@ -1,6 +1,10 @@
-from typing import Self
+from typing import Literal, Self, Type, TypeVar
 from .tools import *
 from .values import *
+
+ModesPPI = Literal["PUBLIC","PRIVATE","INTERFACE"]
+ModesSSM = Literal["STATIC","SHARED","MODULE"]
+
 class cmake:
     __write_stack__:List[str] = []
     __file_name__:str
@@ -22,7 +26,7 @@ class cmake:
         self.__write_stack__.append(f"add_executable({name} {args_to_str(source)})")
         return self
     
-    def add_library(self,name:str=var(project_name),mode:str=static,*source:str)->Self:
+    def add_library(self,name:str=var(project_name),mode:ModesSSM="STATIC",*source:str)->Self:
         """
         ARGS:
             mode: mode can be STATIC , SHARED or MODULE
@@ -30,7 +34,7 @@ class cmake:
         self.__write_stack__.append(f"add_library({name} {mode} {args_to_str(source)})")
         return self
     
-    def target_include_directories(self,for_project:str=var(project_name),mode:str=public,*directories:str)->Self:
+    def target_include_directories(self,for_project:str=var(project_name),mode:ModesPPI="PUBLIC",*directories:str)->Self:
         """
         ARGS:
             mode : mode can be PUBLIC PRIVATE INTERFACE
@@ -42,11 +46,11 @@ class cmake:
         self.__write_stack__.append(f"set({name} {value})")
         return self
     
-    def target_link_libraries(self,lib_name:str,name:str=var(project_name),mode:str=public)->Self:
+    def target_link_libraries(self,lib_name:str,name:str=var(project_name),mode:ModesPPI="PUBLIC")->Self:
         self.__write_stack__.append(f"target_link_libraries({name} {mode} {lib_name})")
         return self
     
-    def target_link_directories(self,name:str=var(project_name),mode:str=public,*directories:str)->Self:
+    def target_link_directories(self,name:str=var(project_name),mode:ModesPPI="PUBLIC",*directories:str)->Self:
         self.__write_stack__.append(f"target_link_directories({name} {mode} {args_to_str(directories)})")
         return self
     
